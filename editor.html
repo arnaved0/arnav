@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Portfolio editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/editor.css">
+<script src="content.js"></script>
+</head>
+<body>
+<header class="ed-bar">
+  <div class="ed-brand">
+    <strong>Portfolio editor</strong>
+    <span id="save-state" class="ed-state" role="status">Loading…</span>
+  </div>
+
+  <div class="ed-style" role="group" aria-label="Site style">
+    <span class="ed-label">Style</span>
+    <button type="button" data-style-choice="motion">Motion</button>
+    <button type="button" data-style-choice="classic">Classic</button>
+  </div>
+
+  <div class="ed-actions">
+    <div class="ed-devices" role="group" aria-label="Preview size">
+      <button type="button" data-device="desktop" aria-pressed="true" title="Desktop preview">Desktop</button>
+      <button type="button" data-device="tablet" aria-pressed="false" title="Tablet preview">Tablet</button>
+      <button type="button" data-device="mobile" aria-pressed="false" title="Mobile preview">Mobile</button>
+    </div>
+    <a class="ed-btn ed-btn-ghost" href="index.html" target="_blank" rel="noopener">Open site →</a>
+    <button type="button" class="ed-btn ed-btn-ghost" id="download-btn">Download content.js</button>
+    <button type="button" class="ed-btn ed-btn-primary" id="publish-btn">Publish</button>
+  </div>
+</header>
+
+<div id="draft-banner" class="ed-banner" hidden>
+  <span id="draft-text"></span>
+  <button type="button" class="ed-link" id="discard-btn">Discard draft</button>
+</div>
+
+<main class="ed-main">
+  <form id="form" class="ed-form" autocomplete="off" novalidate></form>
+  <section class="ed-preview" aria-label="Live preview">
+    <div class="ed-frame-wrap" id="frame-wrap">
+      <iframe id="preview" title="Live preview of the portfolio" src="index.html?preview=1"></iframe>
+    </div>
+  </section>
+</main>
+
+<dialog id="publish-dialog" class="ed-dialog">
+  <form method="dialog" id="publish-form">
+    <h2>Publish to GitHub</h2>
+    <p class="ed-help">Commits <code>content.js</code> and any uploaded files to your repository in one commit. GitHub Pages updates the live site about a minute later.</p>
+
+    <div class="ed-row3">
+      <label>Owner <input name="owner" required pattern="[A-Za-z0-9_.\-]+"></label>
+      <label>Repository <input name="repo" required pattern="[A-Za-z0-9_.\-]+"></label>
+      <label>Branch <input name="branch" required pattern="[A-Za-z0-9_.\/\-]+"></label>
+    </div>
+
+    <label>GitHub token
+      <input name="token" type="password" required spellcheck="false" placeholder="github_pat_…">
+    </label>
+    <p class="ed-help">
+      Create a <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">fine-grained token</a>
+      with access to only this repository and <strong>Contents: Read and write</strong> permission.
+      The token stays in this browser and is only sent to api.github.com.
+    </p>
+    <label class="ed-check"><input type="checkbox" name="remember"> Remember token on this device</label>
+
+    <label>Commit message <input name="message" required></label>
+
+    <ul id="publish-files" class="ed-files"></ul>
+    <p id="publish-status" class="ed-publish-status" role="status"></p>
+
+    <div class="ed-dialog-actions">
+      <button type="button" class="ed-btn ed-btn-ghost" id="forget-token">Forget token</button>
+      <span class="ed-spacer"></span>
+      <button type="button" class="ed-btn ed-btn-ghost" value="cancel" id="publish-cancel">Close</button>
+      <button type="submit" class="ed-btn ed-btn-primary" id="publish-go" value="publish">Publish now</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="js/common.js"></script>
+<script src="js/editor.js"></script>
+</body>
+</html>
