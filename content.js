@@ -15,14 +15,14 @@ window.portfolioContent = {
     "name": "Arnav Saraf",
     "tagline": "Electrical Engineering · Waterloo",
     "status": "Current status: work term",
-    "headline": "Building [RF systems] that listen to the sky.",
-    "intro": "Electrical Engineering co-op student at the University of Waterloo, working across RF, analog electronics and digital design.",
+    "headline": "Electrical [Engineering] @Waterloo",
+    "intro": "",
     "resumeLabel": "View resume",
     "resumeUrl": "https://drive.google.com/file/d/1xwgMl6AtB6WWFLZDLwqeI7deRgm5fsGv/view?usp=drive_link"
   },
   "about": {
     "title": "About me",
-    "headline": "Hands-on projects that teach me [something new].",
+    "headline": "About",
     "paragraphs": [
       "I'm an Electrical Engineering co-op student at the University of Waterloo with a strong interest in RF engineering, particularly its applications in the aerospace industry. I enjoy working on hands-on projects that challenge me to learn new skills and explore different areas of engineering.",
       "At Waterloo, I've been involved in engineering design teams such as WARG (Waterloo Aerial Robotics Group) and have attended engineering and industry events. Outside of academics, I'm a member of the Waterloo varsity squash team and enjoy hiking, kayaking and skiing."
@@ -30,7 +30,7 @@ window.portfolioContent = {
   },
   "projects": {
     "title": "Projects",
-    "intro": "Receivers, radar and signal processing, built and tested end to end.",
+    "intro": "",
     "items": [
       {
         "title": "1.09 GHz Aviation Receiver",
@@ -84,18 +84,26 @@ window.portfolioContent = {
           "Led electrical design for a mobile helium recovery system, including 480 V power distribution and purity and flow monitoring.",
           "Participated in HAZOP discussions and prepared an electrical safety presentation."
         ]
+      },
+      {
+        "company": "Waterloo Aerial Robotics Group (WARG)",
+        "logo": "assets/uploads/images-mwawbz14.jpg",
+        "role": "Electrical Team Member",
+        "bullets": [
+          "Designed voltage-regulation and data-acquisition PCBs for autonomous flight hardware in Altium Designer, including schematic capture, component selection and layout.",
+          "Assembled and tested custom PCBs for both rapid prototyping and competition purposes."
+        ]
       }
     ]
   },
   "keywords": [
-    "RF systems",
-    "Analog electronics",
-    "Digital design"
+    "RF Engineering",
+    "Analog electronics"
   ],
   "contact": {
     "title": "Let's [talk].",
     "text": "Open to co-op roles and projects in RF, aerospace and embedded hardware.",
-    "email": "",
+    "email": "a5saraf@uwaterloo.ca",
     "links": []
   },
   "footer": {
