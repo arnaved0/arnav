@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" data-style="motion" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arnav Saraf | Engineering Portfolio</title>
+<meta name="description" content="Arnav Saraf, Electrical Engineering co-op student at the University of Waterloo. RF, aviation and FPGA projects.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Geist+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap">
+
+<!-- The style chosen in the editor (settings.style) decides which stylesheet loads. -->
+<link rel="stylesheet" id="style-sheet" href="css/motion.css">
+
+<script src="content.js"></script>
+<script>
+  // Pick the stylesheet before the page paints. ?style=classic or ?style=motion overrides it.
+  (function () {
+    var settings = (window.portfolioContent || {}).settings || {};
+    var override = new URLSearchParams(location.search).get('style');
+    var style = override === 'classic' || override === 'motion' ? override : (settings.style === 'classic' ? 'classic' : 'motion');
+    document.documentElement.dataset.style = style;
+    document.documentElement.dataset.theme = settings.theme || 'light';
+    document.getElementById('style-sheet').href = 'css/' + style + '.css';
+  })();
+</script>
+</head>
+<body>
+<div id="app"></div>
+<noscript>
+  <p style="padding:24px;font-family:sans-serif">This portfolio needs JavaScript to display. <a href="assets/Arnav-Saraf-Resume.pdf">Open the resume PDF</a>.</p>
+</noscript>
+
+<script src="js/common.js"></script>
+<script src="js/classic.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
